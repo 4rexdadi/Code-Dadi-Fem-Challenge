@@ -1,0 +1,65 @@
+@use "../globals" as *;
+@use "../util" as *;
+
+.third_section {
+	padding: 95px 0 75px 0;
+	background: $Very-Light-Gray;
+
+	h3 {
+		font-size: rem(32);
+		color: $Dark-Blue;
+		font-family: $base-font;
+		line-height: 1.1;
+		font-weight: 400;
+		margin-bottom: 52px;
+	}
+
+	.article {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 30px;
+	}
+
+	.article__card {
+		background: $White;
+		border-radius: 5px;
+
+		&__img {
+			aspect-ratio: 1.2/1;
+
+			img {
+				width: 100%;
+				height: 100%;
+				border-radius: 5px 5px 0 0;
+			}
+		}
+
+		&__contents {
+			padding: 30px 25px;
+
+			small {
+				font-size: rem(10);
+				color: $Grayish-Blue;
+				font-family: $base-font;
+				font-weight: 300;
+			}
+
+			h4 {
+				color: $Dark-Blue;
+				font-family: $base-font;
+				line-height: 1.1;
+				font-weight: 400;
+				font-size: rem(16);
+				margin-top: 14px;
+				margin-bottom: 14px;
+			}
+
+			p {
+				color: $Grayish-Blue;
+				font-family: $base-font;
+				font-size: rem(12);
+				font-weight: 300;
+			}
+		}
+	}
+}

@@ -1,0 +1,62 @@
+@use "../globals" as *;
+@use "../util" as *;
+
+.main {
+	width: 100%;
+}
+
+.left_main {
+	width: 50%;
+	height: 660px;
+
+	&__content {
+		gap: 26px;
+		margin-top: 170px;
+
+		&__tittle {
+			font-size: rem(48);
+			color: $Dark-Blue;
+			font-family: $base-font;
+			line-height: 1.1;
+			font-weight: 400;
+		}
+
+		&__info {
+			color: $Grayish-Blue;
+			font-family: $base-font;
+			width: 70%;
+		}
+	}
+
+	button {
+		margin-top: 26px;
+	}
+}
+
+.right_main {
+	width: 50%;
+	position: relative;
+
+	&__svg {
+		width: 185%;
+		position: absolute;
+		right: -435px;
+		top: -230px;
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__img {
+		width: 135%;
+		position: absolute;
+		right: -315px;
+		top: -130px;
+		z-index: 1000;
+		img {
+			width: 100%;
+		}
+	}
+}
