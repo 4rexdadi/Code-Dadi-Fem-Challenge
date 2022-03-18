@@ -6,19 +6,45 @@
 	padding: 110px 0;
 
 	&__info {
+		// break-point for tablet
+		@include breakpoint-d($bp: rem(900)) {
+			h2,
+			p {
+				text-align: center;
+				place-items: center;
+				transform: translate(0, 0);
+			}
+		}
+
+		// break-point for mobile
+		@include breakpoint-d($bp: rem(600)) {
+			h2 {
+				span {
+					display: block;
+				}
+			}
+		}
+
 		h2 {
-			font-size: rem(32);
+			font-size: rem(36);
 			color: $Dark-Blue;
 			font-family: $base-font;
 			line-height: 1.1;
 			font-weight: 400;
 			margin-bottom: 38px;
+
+			// break-point for mobile
+			@include breakpoint-d($bp: rem(290)) {
+				font-size: rem(30);
+				transform: translate(0, 0);
+			}
 		}
 
 		p {
 			color: $Grayish-Blue;
 			font-family: $base-font;
 			margin-bottom: 75px;
+			font-weight: 300;
 		}
 	}
 
@@ -26,6 +52,20 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 30px;
+
+		// break-point for tablet
+		@include breakpoint-d($bp: rem(900)) {
+			grid-template-columns: repeat(2, 1fr);
+			transform: translate(0, 0);
+			text-align: center;
+			place-items: center;
+		}
+
+		// break-point for mobile
+		@include breakpoint-d($bp: rem(600)) {
+			grid-template-columns: 1fr;
+			transform: translate(0, 0);
+		}
 
 		.details-svg {
 			margin-bottom: 40px;
@@ -36,12 +76,14 @@
 			color: $Dark-Blue;
 			font-family: $base-font;
 			font-weight: 400;
+			font-size: rem(24);
 		}
 
 		p {
 			color: $Grayish-Blue;
 			font-family: $base-font;
 			font-size: rem(13);
+			font-weight: 300;
 		}
 	}
 }

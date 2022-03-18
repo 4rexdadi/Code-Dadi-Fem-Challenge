@@ -1,62 +1,157 @@
 @use "../globals" as *;
 @use "../util" as *;
 
-.main {
-	width: 100%;
-}
+.first_section {
+	background: $Very-Light-Gray;
 
-.left_main {
-	width: 50%;
-	height: 660px;
+	// break-point for desktop
+	@include breakpoint($bp: rem(1024)) {
+		transform: translate(0, 0);
+
+		.main {
+			max-width: rem(1250);
+			padding-inline: rem(12);
+			margin-inline: auto;
+			padding: 0 !important;
+			display: flex;
+			flex-direction: row-reverse;
+			max-width: 69.375rem;
+			margin: 0 auto;
+			min-height: rem(670);
+		}
+
+		&__contents {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+
+			h1,
+			p {
+				text-align: left;
+			}
+		}
+	}
+
+	&__img {
+		position: relative;
+		height: rem(260);
+		width: 100%;
+		background-image: url(/images/bg-intro-mobile.svg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100%;
+
+		// break-point for desktop
+		@include breakpoint($bp: rem(1024)) {
+			background-image: none;
+			transform: translate(0, 0);
+			min-height: rem(670);
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 153%;
+				height: 100%;
+				left: -8%;
+				background-image: url(/images/Group.svg);
+				background-repeat: no-repeat;
+				background-size: 150%;
+				background-position: 17% 70%;
+			}
+		}
+
+		// break-point for tablet
+		@include breakpoint($bp: rem(400)) {
+			height: rem(360);
+			transform: translate(0, 0);
+		}
+
+		// break-point for tablet
+		@include breakpoint($bp: rem(600)) {
+			height: rem(460);
+			transform: translate(0, 0);
+		}
+
+		// break-point for tablet
+		@include breakpoint($bp: rem(700)) {
+			height: rem(560);
+			transform: translate(0, 0);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: url(/images/image-mockups.png);
+			background-repeat: no-repeat;
+			background-position: center 88%;
+			background-size: 85%;
+
+			@include breakpoint($bp: rem(1024)) {
+				width: 130%;
+				height: 135%;
+				background-size: 115%;
+				background-position: 20% 120%;
+				left: 16%;
+			}
+		}
+	}
 
 	&__content {
-		gap: 26px;
-		margin-top: 170px;
-
 		&__tittle {
-			font-size: rem(48);
+			font-size: rem(42);
 			color: $Dark-Blue;
 			font-family: $base-font;
 			line-height: 1.1;
 			font-weight: 400;
+			margin-top: rem(45);
+			text-align: center;
+
+			// break-point for tablet
+			@include breakpoint($bp: rem(900)) {
+				font-size: rem(52);
+				transform: translate(0, 0);
+			}
+
+			// break-point for tablet
+			@include breakpoint($bp: rem(700)) {
+				font-size: rem(52);
+				margin-top: rem(55);
+				transform: translate(0, 0);
+			}
+
+			// break-point for tablet
+			@include breakpoint-d($bp: rem(290)) {
+				font-size: rem(32);
+				transform: translate(0, 0);
+			}
 		}
 
 		&__info {
 			color: $Grayish-Blue;
 			font-family: $base-font;
-			width: 70%;
+			font-weight: 300;
+			margin-bottom: rem(30);
+			margin-top: rem(21);
+			text-align: center;
+
+			// break-point for tablet
+			@include breakpoint($bp: rem(1024)) {
+				width: 78%;
+				transform: translate(0, 0);
+			}
 		}
-	}
 
-	button {
-		margin-top: 26px;
-	}
-}
+		&__btn {
+			display: grid;
+			place-items: center;
 
-.right_main {
-	width: 50%;
-	position: relative;
-
-	&__svg {
-		width: 185%;
-		position: absolute;
-		right: -435px;
-		top: -230px;
-
-		svg {
-			width: 100%;
-			height: 100%;
-		}
-	}
-
-	&__img {
-		width: 135%;
-		position: absolute;
-		right: -315px;
-		top: -130px;
-		z-index: 1000;
-		img {
-			width: 100%;
+			.cta {
+				margin-bottom: rem(80);
+			}
 		}
 	}
 }
