@@ -1,0 +1,2 @@
+"use strict";var hamburger=document.querySelector(".header__hamburger"),sideMenu=document.querySelector(".header__side-menu"),bodyOverflow=document.querySelector(".body");hamburger.addEventListener("click",(function(){hamburger.classList.toggle("active"),sideMenu.classList.toggle("display"),bodyOverflow.classList.toggle("bodyOverflow")}));
+//# sourceMappingURL=script.js.map
